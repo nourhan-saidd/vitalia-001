@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg back-ground-navbar">
+  <div class="container-fluid">
+    <a
+      class="navbar-brand"
+      routerLink="home"
+      routerLinkActive="router-link-active"
+    >
+      <img src="./assets/imgs/logo.svg" alt="logo" width="100px" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="home"
+            routerLinkActive="router-link-active"
+            >home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="blog"
+            routerLinkActive="router-link-active"
+            >blog</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="doctor"
+            routerLinkActive="router-link-active"
+            >doctor</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="shop"
+            routerLinkActive="router-link-active"
+            >shop</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="community"
+            routerLinkActive="router-link-active"
+            >community</a
+          >
+        </li>
+      </ul>
+       <ul class="navbar">
+        <li class="nav-item border-nav m-1">
+          <a
+            class="nav-link"
+            routerLink="clientprofile"
+            routerLinkActive="router-link-active"
+            >profile</a
+          >
+        </li>
+      </ul>
+      <span
+        routerLink="cart"
+        routerLinkActive="router-link-active"
+        class="icon-cart"
+        ><i class="fa-solid fa-cart-shopping"></i
+      ></span>
+      <ul class="navbar">
+        <li class="nav-item border-nav m-1">
+          <a
+            class="nav-link"
+            routerLinkActive="router-link-active"
+            (click)="loggedout()"
+            >sign out</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

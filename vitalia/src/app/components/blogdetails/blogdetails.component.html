@@ -1,0 +1,28 @@
+<section class="w-75 mx-auto my-3 p-6 bg-orange-200">
+  <header>
+    <div class="flex items-center gap-3">
+      <img
+      [src]="'https://vitalia.runasp.net' + bloglist.doctorImagePath"
+        alt="post photo"
+        class="w-10 h-10 rounded-full"
+      />
+      <div>
+        <h3 class="font-bold">{{bloglist.doctorFName}}{{bloglist.doctorLName}}</h3>
+        <span class="font-light text-gray-400">{{bloglist.createdAt}}</span>
+      </div>
+    </div>
+  </header>
+  <body>
+    <h2>{{bloglist.title}}</h2>
+    <div class="m-5 flex justify-center">
+      <img
+      [src]="'https://vitalia.runasp.net' + bloglist.imagePath"
+        alt="blog photo"
+        class="w-75 rounded-3xl"
+      />
+    </div>
+    <h3>content:</h3>
+    <p>{{bloglist.content}}</p>
+  </body>
+
+</section>

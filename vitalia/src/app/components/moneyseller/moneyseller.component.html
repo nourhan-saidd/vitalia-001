@@ -1,0 +1,35 @@
+<div class="container">
+  <main class="main-content">
+    <section class="balance-section">
+      <h2 class="balance-title">Your current wallet balance</h2>
+      <div class="balance-display">
+        <span class="balance-amount">{{allmoney.totalNetAmount}}</span>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <h2 class="details-title">Wallet details</h2>
+
+      <div class="table-container">
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>transactionId</th>
+              <th>createdAt</th>
+              <th>totalAmount</th>
+            </tr>
+          </thead>
+          <tbody>
+          @for (order of listorder; track order.orderId) {
+            <tr>
+              <td>{{order.transactionId}}</td>
+              <td>{{order.createdAt|date}}</td>
+              <td>{{order.totalAmount}}</td>
+            </tr>
+          }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>

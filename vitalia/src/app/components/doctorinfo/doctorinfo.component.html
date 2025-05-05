@@ -1,0 +1,78 @@
+@for (info of listappointment; track info.id) {
+<div class="container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="profile-image">
+        <img [src]="'https://vitalia.runasp.net' + info.image" alt="Dr image" />
+      </div>
+      <div class="profile-info">
+        <h1 class="doctor-name">{{ info.name }}</h1>
+        <p class="doctor-title">{{ info.shortDescription }}</p>
+
+        <div class="doctor-details">
+          <div class="detail-item">
+            <p class="detail-label">Year of Experience:</p>
+            <div class="experience-box">{{ info.yearsOfExperience }}</div>
+          </div>
+          <div class="detail-item">
+            <p class="detail-label">
+              Consultation Duration: {{ info.consultationDuration }} minuts
+            </p>
+            <p class="detail-label">
+              session amount: {{ info.amountofFeeSession }} $
+            </p>
+          </div>
+        </div>
+
+        <button class="appointment-btn">Make An Appointment</button>
+      </div>
+    </div>
+
+    <div class="profile-content">
+      <div class="bio-section">
+        <h2>Short Bio:</h2>
+        <p>{{ info.shortBio }}</p>
+      </div>
+
+      <div class="specialties-section">
+        <h2>Specialties</h2>
+        <ul class="specialties-list">
+          <li>{{ info.specialties }}</li>
+        </ul>
+      </div>
+
+      <div class="services-section">
+        <h2>Services Provided:</h2>
+        <ul class="services-list">
+          <li>{{ info.servicesProvided }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<div class="container-fluid m-auto bg w-75 p-4 mt-5 mb-5">
+  <table class="schedule-table table">
+    <thead>
+      <tr class="py-3">
+        <th class="px-4">Day</th>
+        <th class="px-4">From</th>
+        <th class="px-4">To</th>
+        <th class="px-4">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (date of listdates; track date.appointmentId) {
+      <tr class="py-3">
+        <td class="px-4">{{ date.dayOfWeek }}</td>
+        <td class="px-4">{{ date.fromTime }}</td>
+        <td class="px-4">{{ date.toTime }}</td>
+        <td class="px-4 d-flex gap-3">
+          <button class="rounded px-5 bg" [routerLink]="['/phoneclientdoctor',date.appointmentId]"  >appointment</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

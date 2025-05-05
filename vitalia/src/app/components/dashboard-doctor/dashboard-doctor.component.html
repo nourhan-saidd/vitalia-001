@@ -1,0 +1,69 @@
+<div class="cotainer">
+  <div class="box">
+    <div>
+      <label for="imGE">upload profile picture</label>
+      <input id="imGE" type="file" (change)="changeImg($event)" />
+      <button (click)="uploadProfilePhoto()" type="submit">upload</button>
+    </div>
+    <ul>
+      <li class="bg-dark-subtle">
+        <a routerLink="profiledoctor" routerLinkActive="">
+          <img [src]="photolist" alt="Doctor Photo" class="w-25" />
+          <p>{{ listname.fname }} {{ listname.lname }}</p>
+
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="appointment" routerLinkActive="">
+          <i class="fa-solid fa-hospital-user"></i>
+          <p>appointment</p>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="adddate" routerLinkActive="">
+          <i class="fa-solid fa-calendar-days"></i>
+          <p>add date</p>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="consultation" routerLinkActive="">
+          <i class="fa-solid fa-calendar-days"></i>
+          <p>consultation</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="addpost" routerLinkActive="">
+          <i class="fa-solid fa-paper-plane"></i>
+          <p>add post</p>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="addblog" routerLinkActive="">
+          <i class="fa-regular fa-newspaper"></i>
+          <p>add blog</p>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="chatdoctor" routerLinkActive="">
+          <i class="fa-solid fa-message"></i>
+          <p>chat</p>
+        </a>
+      </li>
+      <li>
+        <a routerLink="moneydoctor" routerLinkActive="">
+          <i class="fa-solid fa-wallet"></i>
+          <p>money</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

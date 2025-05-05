@@ -1,0 +1,159 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f5f0;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 16px;
+  background-color: #2a6244;
+  padding: 20px 0;
+  position: relative;
+}
+
+.sidebar-title {
+  color: #2a6244;
+  font-size: 24px;
+  font-weight: 600;
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  white-space: nowrap;
+  top: 30px;
+  left: 8px;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Balance section styles */
+.balance-section {
+  background-color: #f2e8d5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.balance-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a5542;
+  margin-bottom: 15px;
+}
+
+.balance-display {
+  background-color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.balance-amount {
+  font-size: 26px;
+  font-weight: bold;
+  color: #f08000;
+}
+
+/* Details section styles */
+.details-section {
+  background-color: #f2e8d5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.details-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f08000;
+  margin-bottom: 15px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table styles */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e0d8c5;
+  color: #2a5542;
+  font-weight: 600;
+}
+
+.transactions-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #e0d8c5;
+}
+
+.transactions-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Client cell styles */
+.client {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 60px;
+  }
+
+  .sidebar-title {
+    transform: none;
+    left: 20px;
+    top: 15px;
+    color: white;
+  }
+
+  .transactions-table th:first-child,
+  .transactions-table td:first-child {
+    padding-left: 5px;
+  }
+
+  .transactions-table th:last-child,
+  .transactions-table td:last-child {
+    padding-right: 5px;
+  }
+}

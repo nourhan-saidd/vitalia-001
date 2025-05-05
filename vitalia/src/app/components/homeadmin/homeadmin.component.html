@@ -1,0 +1,41 @@
+<div class="cotainer">
+  <div class="box">
+    <ul>
+      <li>
+        <a [routerLink]="['/admin/homeadmin/accept-doctors']" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>accept-doctors</p>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin/homeadmin/accept-sellers']" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>accept-sellers</p>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin/homeadmin/Technical-support']" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>Technical-support</p>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin/homeadmin/admin-money-doctor']" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>money-doctor</p>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin/homeadmin/admin-money-seller']" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>money-seller</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

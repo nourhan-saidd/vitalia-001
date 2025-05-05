@@ -1,0 +1,19 @@
+<section class=" mt-5 mb-5  container m-auto">
+  <h1 class="text-center my-2">details of product</h1>
+  <div class="row">
+    <div class="col-md-3">
+      <div >
+        <img [src]="'https://vitalia.runasp.net' + datailsproduct.imagePath" class="w-100" alt="product image">
+      </div>
+    </div>
+    <div class="col-md-9 bg text-center">
+      <div>
+        <h2>{{datailsproduct.name}}</h2>
+        <span>{{datailsproduct.price + '$'}}</span>
+        <p class="text-muted">{{datailsproduct.description}}</p>
+
+        <button (click)="addToCart(datailsproduct.id)">add to cart</button>
+      </div>
+    </div>
+  </div>
+</section>

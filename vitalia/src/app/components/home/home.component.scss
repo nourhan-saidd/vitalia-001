@@ -1,0 +1,160 @@
+h1 {
+  font-size: 60px;
+  color: rgb(242, 157, 0);
+  text-transform: capitalize;
+  text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.626);
+}
+h3 {
+  color: #294634;
+  font-size: 30px;
+  text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.626);
+  font-weight: bold;
+  margin-top: 5px;
+}
+.bold {
+  margin-top: 20px;
+  color: #294634;
+  font-size: 20px;
+  text-shadow: 2px 2px 2px rgba(128, 128, 128, 0.626);
+  font-weight: bold;
+}
+.start {
+  background-color: #294634;
+  padding: 10px 70px;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  transition: transform 1s;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.start:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.626);
+}
+img {
+  border-radius: 20px;
+}
+.photo1 {
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+.photo2 {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+}
+.part2{
+  position: relative;
+  padding: 200px;
+}
+.part3{
+  margin-top: 50px;
+}
+.photo3{
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+.photo4{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.part-right {
+  position: relative;
+}
+.wave {
+  width: 100%;
+  height: 2px;
+  background-color: #efd2a2;
+}
+.ai {
+  width: 80%;
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 20px solid #294634;
+  border-left-color: transparent;
+  border-radius: 20px;
+  position: relative;
+}
+.app-ai {
+  content: "get th app now !";
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  top: 32px;
+  right: -154px;
+  width: 300px;
+  height: 60px;
+  background-color: #294634;
+  border-radius: 20px;
+}
+.app-ai:hover {
+  box-shadow: 2px 2px rgba(128, 128, 128, 0.488);
+}
+span {
+  color: #294634;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.about div {
+  border: 3px solid rgba(128, 128, 128, 0.532);
+  border-top-color: transparent;
+  margin-left: 10px;
+  padding: 20px 5px;
+  border-radius: 20px;
+  transition: transform 0.5s;
+}
+.about div:hover{
+  box-shadow: 4px 4px 4px rgba(128, 128, 128, 0.441);
+  transform: translateY(-10px);
+}
+.normals {
+  width: 70%;
+  margin: auto;
+
+}
+.borders{
+  border: 1px solid rgba(128, 128, 128, 0.625);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px gray;
+}
+
+
+.btn-community {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+
+}
+
+.btn-community::after {
+  content: '';
+  top: 22px;
+  left: 4px;
+  width: 119px;
+  height: 15px;
+  background-color:rgba(128, 128, 128, 0.625);
+  position: absolute;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn-community:hover::after {
+  height: 30px;
+  transform: translateY(-15px);
+}

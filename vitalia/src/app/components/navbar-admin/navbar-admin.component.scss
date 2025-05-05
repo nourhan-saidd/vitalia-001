@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.back-ground-navbar{
+  background-color:#fffaf0 ;
+  border-bottom: #294634 1px solid;
+
+}
+li{
+  list-style-type:none;
+}
+li:hover a{
+  background-color: #294634;
+  color: white;
+  border-radius: 20px;
+
+}
+a{
+  color:#294634;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+}
+.border-nav{
+  border:#294634 3px solid;
+  border-radius: 20px;
+}
+
+.icon-cart{
+  font-size: 25px;
+  color: #294634;
+  margin-right: 10px;
+}

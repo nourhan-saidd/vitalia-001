@@ -1,0 +1,58 @@
+@for (item of listseller; track item.id) {
+  <div class="form-container">
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <div class="name-inputs">
+          <input
+            type="text"
+            placeholder="First name"
+            [(ngModel)]="item.fName"
+            name="fName"
+          />
+          <input
+            type="text"
+            placeholder="Second name"
+            [(ngModel)]="item.lName"
+            name="lName"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>bank account</label>
+        <input
+          type="text"
+          placeholder=" bank account"
+          [(ngModel)]="item.bankAccountInfo"
+          name="bankAccount"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <div class="phone-input">
+          <input
+            type="tel"
+            placeholder="01"
+            [(ngModel)]="item.phone"
+            name="phone"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>store name</label>
+        <div class="phone-input">
+          <input
+            type="text"
+            placeholder="store name"
+            [(ngModel)]="item.storeName"
+            name="storename"
+          />
+        </div>
+      </div>
+      <button type="button" (click)="updateinfo(item)" >update</button>
+    </form>
+  </div>
+  }

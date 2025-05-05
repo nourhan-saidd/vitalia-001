@@ -1,0 +1,31 @@
+<div class="container mt-5 mb-5">
+  <div class="confirmation-card">
+    <header>
+      <h1>
+        Complete Your <span class="highlight">payment</span> & Take the First
+        Step Toward a Healthier You!
+      </h1>
+    </header>
+
+    <div class="confirmation-section">
+      <h2>Confirm your Data.</h2>
+      <form class="confirmation-form">
+
+        <div class="input-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone" placeholder="Enter Your Phone number" [(ngModel)]="phone"  />
+        </div>
+        <div class="button-group">
+          <button
+        
+          (click)="senddata(); goToPaymentPage()"
+            type="button"
+            class="btn primary-btn"
+          >
+            Next
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

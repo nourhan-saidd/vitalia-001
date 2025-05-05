@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="main-content">
+    <div class="table-container">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>productName</th>
+            <th>quantity</th>
+            <th>orderDate</th>
+            <th>clientName</th>
+            <th>shippingAddress</th>
+            <th>clientPhone</th>
+            <th>unitPrice</th>
+            <th>totalAmount</th>
+            <th>status</th>
+          </tr>
+        </thead>
+
+  <tbody>
+    @for (order of listorder; track order.productId) {
+    <tr>
+      <td>{{order.productName}}</td>
+      <td>{{order.quantity}}</td>
+      <td>{{order.orderDate|date}}</td>
+      <td>{{order.clientName}}</td>
+      <td>{{order.shippingAddress}}</td>
+      <td>{{order.clientPhone}}</td>
+      <td>{{order.unitPrice}}</td>
+      <td>{{order.totalAmount}}</td>
+      <td>
+        <select [(ngModel)]="order.status" (change)="updateOrderStatus(order)" title="Select order status">
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Canceled">Canceled</option>
+        </select>
+
+
+      </td>
+
+    </tr>
+  }
+  </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+

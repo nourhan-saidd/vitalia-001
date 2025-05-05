@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf7f2;
+  color: #333;
+  line-height: 1.5;
+  padding: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+/* Typography */
+h1, h2, h3, p {
+  margin-bottom: 8px;
+}
+
+.main-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2d4a3e;
+  line-height: 1.2;
+}
+
+.main-title span {
+  color: #f08a24;
+  font-weight: 700;
+}
+
+/* Expert Grid Layout */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Expert Cards */
+.expert-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.expert-image {
+  height: 240px;
+  overflow: hidden;
+}
+
+.expert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.expert-card:hover .expert-image img {
+  transform: scale(1.05);
+}
+
+.expert-info {
+  padding: 20px;
+}
+
+.expert-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d4a3e;
+}
+
+.expert-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f08a24;
+  margin-bottom: 12px;
+}
+
+.expert-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.appointment-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.appointment-button:hover {
+  color: #f08a24;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 16px 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .experts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .experts-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .main-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    padding: 16px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-title {
+    font-size: 36px;
+    margin-bottom: 56px;
+  }
+
+  .expert-description {
+    min-height: 70px;
+  }
+
+  body {
+    padding: 24px;
+  }
+}
+
+/* Animation for buttons */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.appointment-button:hover {
+  animation: pulse 1s infinite;
+}

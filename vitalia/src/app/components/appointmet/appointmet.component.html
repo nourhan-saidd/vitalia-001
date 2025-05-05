@@ -1,0 +1,153 @@
+<div class="container">
+  <form
+    class="article-form"
+    (ngSubmit)="info ? updateProfile() : createprofile()"
+  >
+    <!-- عرض الصورة الحالية -->
+    <div class="form-group" *ngIf="imageUrl">
+      <label>Current Image:</label>
+      <img
+        [src]="imageUrl"
+        alt="Doctor Image"
+        style="max-width: 200px; margin-bottom: 10px"
+      />
+    </div>
+
+    <!-- إدخال صورة جديدة -->
+    <div class="upload-section">
+      <label for="imGE">Image</label>
+      <div class="upload-area">
+        <span class="upload-text">
+          <input
+            id="imGE"
+            type="file"
+            (change)="uploadphot($event)"
+            accept="image/*"
+          />
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        [(ngModel)]="Name"
+        name="name"
+        placeholder="Add your name"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Short Description</label>
+      <input
+        type="text"
+        [(ngModel)]="ShortDescription"
+        name="shortDesc"
+        placeholder="Add Short Description"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Years Of Experience</label>
+      <input
+        type="number"
+        [(ngModel)]="YearsOfExperience"
+        name="experience"
+        placeholder="Add Years Of Experience"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Consultation Duration</label>
+      <input
+        type="number"
+        [(ngModel)]="ConsultationDuration"
+        name="duration"
+        placeholder="Add Consultation Duration"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Amount Of Fee Session</label>
+      <input
+        type="number"
+        [(ngModel)]="AmoutOfFeeSession"
+        name="fee"
+        placeholder="Add Fee"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Specialties</label>
+      <textarea
+        [(ngModel)]="Specialties"
+        name="specialties"
+        placeholder="Write Specialties"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Services Provided</label>
+      <textarea
+        [(ngModel)]="ServicesProvided"
+        name="services"
+        placeholder="Write Services Provided"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Short Bio</label>
+      <textarea
+        [(ngModel)]="ShortBio"
+        name="bio"
+        placeholder="Write Short Bio"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-submit">
+      {{ info ? "Update your profile" : "Add your profile" }}
+    </button>
+  </form>
+</div>
+<!--
+
+
+<!-- click inable -->
+<div class="switch-container">
+  <input type="checkbox" id="switch" (change)="change($event)" />
+  <label for="switch" class="switch"></label>
+</div>
+
+
+
+
+@for (info of listappointment; track info.id) {
+  <div class="card text-center bg-light container-fluid w-50 m-auto mt-5 mb-5" [routerLink]="['/dashboard-doctor/appointmentinfo', info.id]">
+    <div class="flex gap-4">
+      <button
+      (click)="$event.stopPropagation(); updateinfo(info)"
+      class="btn btn-warning btn-sm rounded m-3"
+    >
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
+    </div>
+    <div class="image-card">
+      <img [src]="'https://vitalia.runasp.net' +info.image" alt="doctor image">
+    </div>
+    <div>
+      <h2>{{info.name}}</h2>
+      <h6>{{info.shortDescription}}</h6>
+      </div>
+  </div>
+}

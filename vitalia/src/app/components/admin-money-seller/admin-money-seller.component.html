@@ -1,0 +1,30 @@
+<div class="container">
+  <header class="header">
+    <h1 class="title">
+      <span class="wallet-text">Wallet details</span>
+      <span class="arrow">></span>
+      <span class="doctor-text">seller</span>
+    </h1>
+  </header>
+  <div class="table-container">
+    <div class="table-header">
+      <div class="header-client">store name</div>
+      <div class="header-price">adminEarnings</div>
+    </div>
+
+
+@for (item of listsellers; track item.sellerId) {
+  <div class="table-rows">
+    <div class="table-row">
+      <div class="client">
+        <span>{{item.storeName}}</span>
+      </div>
+      <div class="price">{{item.adminEarnings}}$</div>
+    </div>
+  </div>
+}
+
+
+
+  </div>
+</div>

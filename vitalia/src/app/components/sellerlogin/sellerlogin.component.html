@@ -1,0 +1,79 @@
+<section class="container text-center mt-5 rounded-5 mb-5 p-5">
+  <h1 class="h2"> seller..Login Now:</h1>
+  <form [formGroup]="loginsellerForm" (ngSubmit)="loginsellerSubmit()">
+    <div class="mt-2">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{
+          'is-valid':
+            !loginsellerForm.get('email')?.errors &&
+            !loginsellerForm.get('email')?.touched,
+          'is-invalid':
+          loginsellerForm.get('email')?.errors &&
+          loginsellerForm.get('email')?.touched
+        }"
+      />
+      @if (loginsellerForm.get('email')?.errors &&
+      loginsellerForm.get('email')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (loginsellerForm.get('email')?.getError('required')) {
+        <p class="m-0">Email is required</p>
+        } @else if (loginsellerForm.get('email')?.getError('email')) {
+        <p class="m-0">Enter a valid email</p>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="mt-2">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+          'is-valid': !(
+            loginsellerForm.get('password')?.errors &&
+            !loginsellerForm.get('password')?.touched
+          ),
+          'is-invalid':
+          loginsellerForm.get('password')?.errors &&
+          loginsellerForm.get('password')?.touched
+        }"
+      />
+      @if (loginsellerForm.get('password')?.errors &&
+      loginsellerForm.get('password')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (loginsellerForm.get('password')?.getError('required')){
+        <p class="m-0">Password is required</p>
+        } @else if (loginsellerForm.get('password')?.getError('pattern')) {
+        <p class="m-0">Password must be at least 6 characters</p>
+        }
+      </div>
+      }
+    </div>
+
+    <button
+      [disabled]="loginsellerForm.invalid"
+      type="submit"
+      class="mt-5 container "
+    >
+      Login
+    </button>
+
+    @if (msgerror) {
+    <p class="alert alert-danger">Invalid email or password</p>
+    }
+  </form>
+
+  <a [routerLink]="['/forgetpassword']"   >forget password? </a>
+
+</section>
+

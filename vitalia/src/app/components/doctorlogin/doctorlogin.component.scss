@@ -1,0 +1,40 @@
+section{
+  background-color: #FFFAF0;
+  border: 2px solid #294634;
+  box-shadow: 5px 5px 0 #eee;
+}
+h1{
+  color: #294634;
+  text-shadow: 1px 1px 0 rgb(207, 195, 195);
+  font-size: 50px;
+  text-transform: capitalize;
+}
+label{
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+h2{
+  color: #294634;
+  text-shadow: 1px 1px 0 rgb(207, 195, 195);
+  font-size: 30px;
+  text-transform: capitalize;
+}
+button{
+  width: 70%;
+  text-align: center;
+  background-color: #294634;
+  color: white;
+  border-radius: 30px;
+  font-size: 30px;
+}
+li{
+  list-style: none;
+  color: #294634;
+  padding: 5px;
+}
+a{
+margin-top: 10px;
+display: block;
+}

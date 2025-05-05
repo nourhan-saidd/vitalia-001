@@ -1,0 +1,275 @@
+<section class="container text-center mt-5 rounded-5 mb-5 p-5">
+  <h1 class="h2">register now:</h1>
+  <form [formGroup]="registerDoctorsForm" (ngSubmit)="submitDoctorForm()">
+
+    <div class=" container spaces d-flex gx-3">
+      <div class="mt-2 w-50 ">
+        <label for="name">first name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          formControlName="FName"
+    [ngClass]="{
+    'is-valid':!(registerDoctorsForm.get('FName')?.errors && !registerDoctorsForm.get('FName')?.touched ),
+    'is-invalid':(registerDoctorsForm.get('FName')?.errors &&registerDoctorsForm.get('FName')?.touched )
+    }"
+        />
+        @if (registerDoctorsForm.get('FName')?.errors &&registerDoctorsForm.get('FName')?.touched ) {
+        <div class="alert alert-danger mt-2">
+          @if (registerDoctorsForm.get('FName')?.getError('required')) {
+          <p class="m-0">name is required</p>
+          } @else if (registerDoctorsForm.get('FName')?.getError('minlength')) {
+          <p class="m-0">Name must be at least 3 characters long.</p>
+          } @else if (registerDoctorsForm.get('FName')?.getError('maxlength')) {
+          <p class="m-0">Name cannot be more than 20 characters long.</p>
+          }
+        </div>
+        }
+      </div>
+
+
+
+      <div class="mt-2 ms-4 w-50">
+        <label for="name"> last name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          formControlName="LName"
+    [ngClass]="{
+    'is-valid':!(registerDoctorsForm.get('LName')?.errors && !registerDoctorsForm.get('LName')?.touched ),
+    'is-invalid':(registerDoctorsForm.get('LName')?.errors &&registerDoctorsForm.get('LName')?.touched )
+    }"
+        />
+        @if (registerDoctorsForm.get('LName')?.errors &&registerDoctorsForm.get('LName')?.touched ) {
+        <div class="alert alert-danger mt-2">
+          @if (registerDoctorsForm.get('LName')?.getError('required')) {
+          <p class="m-0">name is required</p>
+          } @else if (registerDoctorsForm.get('LName')?.getError('minlength')) {
+          <p class="m-0">Name must be at least 3 characters long.</p>
+          } @else if (registerDoctorsForm.get('LName')?.getError('maxlength')) {
+          <p class="m-0">Name cannot be more than 20 characters long.</p>
+          }
+        </div>
+        }
+      </div>
+     </div>
+
+
+    <div class="mt-2">
+      <label for="email">email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{
+          'is-valid': !(
+            registerDoctorsForm.get('email')?.errors &&
+            !registerDoctorsForm.get('email')?.touched
+          ),
+          'is-invalid':
+            registerDoctorsForm.get('email')?.errors &&
+            registerDoctorsForm.get('email')?.touched
+        }"
+      />
+      @if (registerDoctorsForm.get('email')?.errors
+      &&registerDoctorsForm.get('email')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerDoctorsForm.get('email')?.getError('required')) {
+        <p class="m-0">email must exist</p>
+        } @else if (registerDoctorsForm.get('email')?.getError('email')) {
+        <p class="m-0">email must be valid</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="phone">phone</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="form-control"
+        formControlName="phone"
+        [ngClass]="{
+          'is-valid': !(
+            registerDoctorsForm.get('phone')?.errors &&
+            !registerDoctorsForm.get('phone')?.touched
+          ),
+          'is-invalid':
+            registerDoctorsForm.get('phone')?.errors &&
+            registerDoctorsForm.get('phone')?.touched
+        }"
+      />
+      @if (registerDoctorsForm.get('phone')?.errors &&
+      registerDoctorsForm.get('phone')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerDoctorsForm.get('phone')?.getError('required')) {
+        <p class="m-0">phone is required</p>
+        } @else if (registerDoctorsForm.get('phone')?.getError('pattern')) {
+        <p class="m-0">phone must be valid</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="password">password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+          'is-valid': !(
+            registerDoctorsForm.get('password')?.errors &&
+            !registerDoctorsForm.get('password')?.touched
+          ),
+          'is-invalid':
+            registerDoctorsForm.get('password')?.errors &&
+            registerDoctorsForm.get('password')?.touched
+        }"
+      />
+      @if (registerDoctorsForm.get('password')?.errors &&
+      registerDoctorsForm.get('password')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerDoctorsForm.get('password')?.getError('required')){
+        <p class="m-0">password is required</p>
+        } @else if(registerDoctorsForm.get('password')?.getError('pattern')) {
+        <p class="m-0">password much be more than 6 characters and have one capital charactere and one special char</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="rePassword">rePassword</label>
+      <input
+        type="password"
+        id="rePassword"
+        name="rePassword"
+        class="form-control"
+        formControlName="rePassword"
+        [ngClass]="{
+          'is-valid':
+            !registerDoctorsForm.getError('missmatch') &&
+            registerDoctorsForm.get('rePassword')?.valid &&
+            registerDoctorsForm.get('rePassword')?.touched,
+          'is-invalid':
+            registerDoctorsForm.getError('missmatch') ||
+            (registerDoctorsForm.get('rePassword')?.invalid &&
+              registerDoctorsForm.get('rePassword')?.touched)
+        }"
+      />
+      @if (registerDoctorsForm.getError('missmatch') &&
+      registerDoctorsForm.get('rePassword')?.touched) {
+      <div class="alert alert-danger mt-2">
+        <p class="m-0">password is not matched</p>
+      </div>
+      }
+    </div>
+    <h2 class="mt-3">Medical License :</h2>
+    <div class="d-flex m-auto w-75">
+      <div class="mt-2 ms-1 w-50">
+        <label for="LicenseNumber">License Number</label>
+        <input
+          type="number"
+          id="LicenseNumber"
+          name="LicenseNumber"
+          class="form-control"
+          formControlName="LicenseNumber"
+          [ngClass]="{
+            'is-valid': !(
+              registerDoctorsForm.get('LicenseNumber')?.errors &&
+              !registerDoctorsForm.get('LicenseNumber')?.touched
+            ),
+            'is-invalid':
+              registerDoctorsForm.get('LicenseNumber')?.errors &&
+              registerDoctorsForm.get('LicenseNumber')?.touched
+          }"
+        />
+        @if (registerDoctorsForm.get('LicenseNumber')?.errors &&
+        registerDoctorsForm.get('LicenseNumber')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerDoctorsForm.get('LicenseNumber')?.getError('required')){
+          <p class="m-0">LicenseNumber is required</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="mt-2 ms-4 ms-1 w-50">
+        <label for="LicenseExpire">License Expire</label>
+        <input
+          type="date"
+          id="LicenseExpire"
+          name="LicenseExpire"
+          class="form-control"
+          formControlName="LicenseExpire"
+          [ngClass]="{
+            'is-valid': !(
+              registerDoctorsForm.get('LicenseExpire')?.errors &&
+              !registerDoctorsForm.get('LicenseExpire')?.touched
+            ),
+            'is-invalid':
+              registerDoctorsForm.get('LicenseExpire')?.errors &&
+              registerDoctorsForm.get('LicenseExpire')?.touched
+          }"
+        />
+        @if (registerDoctorsForm.get('LicenseExpire')?.errors &&
+        registerDoctorsForm.get('LicenseExpire')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerDoctorsForm.get('LicenseExpire')?.getError('required')){
+          <p class="m-0">LicenseExpire is required</p>
+          }
+        </div>
+        }
+      </div>
+    </div>
+    <h2 class="mt-3">Education& Certifications:</h2>
+    <div class="mt-3 w-75 m-auto">
+      <label for="Certifications"> Certifications</label>
+      <input
+        type="file"
+        id="Certifications"
+        name="Certifications"
+        class="form-control"
+        formControlName="Certifications"
+        accept=".pdf, .doc, .docx"
+        multiple
+        (change)="onFileSelected($event)"
+      />
+      @if (registerDoctorsForm.get('Certifications')?.errors &&
+      registerDoctorsForm.get('Certifications')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerDoctorsForm.get('Certifications')?.getError('required')){
+        <p class="m-0">Certifications is required</p>
+        }
+      </div>
+      }
+    </div>
+    <button [disabled]="registerDoctorsForm.invalid" type="submit" class="mt-5 container">
+      sign up
+    </button>
+    <div class="mt-5">
+      <input id="terms" type="checkbox" />
+      <label for="terms"
+        >I have read and agree to the Privacy Policy and Terms of Service</label
+      >
+    </div>
+
+@if (msgerror) {
+  <p class="alert alert-danger">account already exist</p>
+}
+  </form>
+  <div>
+    have an account :
+    <li class="nav-item">
+      <a class="nav-link" (click)="navigatenow()">login</a>
+
+    </li>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff8e1 0%, #ffffff 100%);
+  padding: 3rem 1rem;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menu-header h1 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.menu-header p {
+  color: #4a5568;
+  max-width: 36rem;
+  margin: 0 auto 1rem;
+}
+
+.cart-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #d97706;
+}
+
+.cart-counter svg {
+  color: #d97706;
+}
+
+.cart-counter span {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.menu-card {
+  background: #FFFAF0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.menu-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  height: 12rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.card-content h3 {
+  color: #166534;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.price {
+  color: #d97706;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  color: #d97706;
+}
+
+.add-to-cart svg {
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart:hover svg {
+  transform: translateX(4px);
+}
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

@@ -1,0 +1,40 @@
+@for (item of profilelist; track item.id) {
+<div class="form-container">
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <div class="name-inputs">
+        <input type="text" placeholder="First name" [(ngModel)]="item.fName" name="fName"/>
+        <input type="text" placeholder="Second name" [(ngModel)]="item.lName" name="lName"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>address</label>
+      <input type="text" placeholder=" Address" [(ngModel)]="item.address" name="address" />
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <div class="phone-input">
+        <input type="tel" placeholder="01" [(ngModel)]="item.phone"  name="phone"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Health Information</label>
+      <div class="health-inputs">
+        <input type="text" placeholder="Age" [(ngModel)]="item.birthDay" name="birthDay" />
+        <input type="text" placeholder="Gender" [(ngModel)]="item.gender"  name="gender"/>
+      </div>
+      <div class="health-inputs">
+        <input type="text" placeholder="Height" [(ngModel)]="item.height" name="height" />
+        <input type="text" placeholder="Weight" [(ngModel)]="item.weight"  name="weight"/>
+      </div>
+    </div>
+
+    <button type="button" (click)="updateform(item)">update</button>
+  </form>
+</div>
+
+}

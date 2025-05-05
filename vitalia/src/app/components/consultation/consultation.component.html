@@ -1,0 +1,23 @@
+<!-- for dates -->
+<div class="container-fluid m-auto bg w-75 p-4 mt-5 mb-5">
+  <table class="schedule-table table">
+    <thead>
+      <tr class="py-3">
+        <th class="px-4">client name</th>
+        <th class="px-4">day</th>
+        <th class="px-4">from</th>
+        <th class="px-4">to</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (date of listcons; track date.appointmentId) {
+      <tr class="py-3">
+        <td class="px-4">{{ date.clientName }}</td>
+        <td class="px-4">{{ date.day }}</td>
+        <td class="px-4">{{ date.from }}</td>
+        <td class="px-4">{{date.to}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

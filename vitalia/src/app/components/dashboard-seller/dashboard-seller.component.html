@@ -1,0 +1,47 @@
+<div class="cotainer">
+  <div class="box">
+    <div>
+      <label for="imGE">upload profile picture</label>
+      <input id="imGE" type="file" (change)="changeImg($event)" />
+      <button (click)="uploadProfilePhoto()" type="submit">upload</button>
+    </div>
+    <ul>
+      <li class="bg-dark-subtle">
+        <a routerLink="profileseller" routerLinkActive="">
+          <img [src]="photolist" alt="Doctor Photo" class="w-25" />
+          <p>{{ listname.fname }} {{ listname.lname }}</p>
+
+        </a>
+      </li>
+      <li>
+        <a routerLink="products" routerLinkActive="">
+          <i class="fa-brands fa-product-hunt"></i>
+          <p>products</p>
+        </a>
+      </li>
+
+
+      <li>
+        <a routerLink="status" routerLinkActive="">
+          <i class="fa-solid fa-check"></i>
+          <p>status</p>
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="moneyseller" routerLinkActive="">
+          <i class="fa-solid fa-wallet"></i>
+          <p>money</p>
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

@@ -1,0 +1,32 @@
+<section class="w-1/2 mx-auto my-3 p-6 bg-red-900">
+  <!-- all post -->
+  @for (post of postlist; track post.id) {
+  <article class="bg-yellow-50 p-3 rounded-md flex flex-col gap-4 m-3">
+    <!-- header -->
+    <div class="flex items-center gap-3">
+      <img [src]="'http://vitalia.runasp.net' + post.doctorImagePath" alt="post photo"     class="w-10 h-10 rounded-full"/>
+      <div>
+        <h3 class="font-bold">{{ post.doctorFName}} {{ post.doctorLName}}</h3>
+        <span class="font-light text-gray-400">{{ post.createdAt| date }}</span>
+      </div>
+    </div>
+    <!-- body -->
+    <p>{{ post.content }}</p>
+    <img [src]="'http://vitalia.runasp.net' + post.imagePath" alt="post photo" class="w-full rounded-md" />
+
+
+    <!-- Heart icon for like -->
+    <i
+    (click)="toggleLike(post)"
+    [ngClass]="{ 'text-red-500': post.isLiked, 'text-gray-500': !post.isLiked }"
+    class="fas fa-heart cursor-pointer text-xl">
+  </i>
+  <p class="mt-2 text-gray-500">Likes: {{ post.likes }}</p>
+
+  </article>
+  }
+</section>
+<p class="mt-20">0</p>
+
+
+

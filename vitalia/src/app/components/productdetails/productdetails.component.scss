@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+h2{
+  font-size: 50px;
+  text-transform: capitalize;
+  padding: 20px;
+}
+.bg{
+  background-color:#b8b49d17;
+  box-shadow: 5px 5px 0 #b72c2c50;
+}
+p{
+  padding-bottom: 10px;
+}
+span{
+  display: block;
+  color: rgb(205, 148, 42);
+  font-size: 25px;
+  font-weight: 700;
+}
+button{
+  padding: 10px 100px;
+  border-radius: 20px;
+  margin-top: 70px;
+  background-color: #294634;
+  color: white;
+  font-size: 25px;
+}

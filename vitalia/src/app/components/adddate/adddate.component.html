@@ -1,0 +1,93 @@
+<form>
+  <div class="container mt-5 m-auto">
+    <h1 class="title">Edit Your Schedule</h1>
+    <div class="form-row">
+      <div class="form-group day-select">
+        <label for="day-select" class="label">Day</label>
+        <div class="select-wrapper">
+          <select
+            id="day-select"
+            class="select"
+            [(ngModel)]="dayOfWeek"
+            name="dayOfWeek"
+          >
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row time-selection">
+      <div class="form-group time-from">
+        <label for="time-from" class="label">From</label>
+        <div class="time-input-wrapper">
+          <input
+            type="time"
+            id="time-from"
+            class="time-input"
+            [(ngModel)]="fromTime"
+            name="fromTime"
+          />
+          <span class="time-suffix">pm</span>
+        </div>
+      </div>
+      <div class="form-group time-to">
+        <label for="time-to" class="label">To</label>
+        <div class="time-input-wrapper">
+          <input
+            type="time"
+            id="time-to"
+            class="time-input"
+            [(ngModel)]="toTime"
+            name="toTime"
+          />
+          <span class="time-suffix">pm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <button
+      type="button"
+      class="confirm-button"
+      (click)="isEdit ? updatedate() : adddate()"
+    >
+      {{ isEdit ? 'Update' : 'Confirm' }}
+    </button>
+
+    </div>
+  </div>
+</form>
+
+<!-- for dates -->
+<div class="container-fluid m-auto bg w-75 p-4 mt-5 mb-5">
+  <table class="schedule-table table">
+    <thead>
+      <tr class="py-3">
+        <th class="px-4">Day</th>
+        <th class="px-4">From</th>
+        <th class="px-4">To</th>
+        <th class="px-4">status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (date of getdatelist; track date.appointmentId) {
+      <tr class="py-3">
+        <td class="px-4">{{ date.dayOfWeek }}</td>
+        <td class="px-4">{{ date.fromTime }}</td>
+        <td class="px-4">{{ date.toTime }}</td>
+        <td class="px-4 d-flex gap-3">
+          <button class="px-4 rounded yellow" (click)="update(date)">Edit</button>
+          <button class="px-4 rounded red" (click)="deletedate(date.appointmentId)">delete</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

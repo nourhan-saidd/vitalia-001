@@ -1,0 +1,21 @@
+<!-- //for blogs -->
+<div class="bg-slate-500 p-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    @for (blog of bloglist; track blog.id) {
+      <div class="menu-card bg-white p-4 rounded-lg shadow-md"  [routerLink]="['/blogdetails',blog.id]">
+        <div class="image-container mb-4">
+          <img [src]="'https://vitalia.runasp.net' + blog.imagePath" alt="product photo" class="w-full h-auto rounded-md" />
+        </div>
+        <div class="card-content text-center">
+          <h3 class="text-lg font-semibold mb-2">{{blog.title}}</h3>
+          <button class="add-to-cart bg-green-600 text-white px-4 py-2 rounded flex items-center justify-center gap-2">
+            see more
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14m-7-7l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

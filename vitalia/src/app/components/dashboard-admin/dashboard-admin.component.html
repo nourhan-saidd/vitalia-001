@@ -1,0 +1,121 @@
+<section class="container text-center mt-5 rounded-5 mb-5 p-5">
+  <h1 class="h2">register now:</h1>
+  <form [formGroup]="registerAdminForm" (ngSubmit)="registerAdminSubmit()">
+
+
+  <div class="mt-2">
+    <label for="username">username</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      formControlName="username"
+[ngClass]="{
+'is-valid':!(registerAdminForm.get('username')?.errors && !registerAdminForm.get('username')?.touched ),
+'is-invalid':(registerAdminForm.get('username')?.errors &&registerAdminForm.get('username')?.touched )
+}"
+    />
+    @if (registerAdminForm.get('username')?.errors &&registerAdminForm.get('FName')?.touched ) {
+    <div class="alert alert-danger mt-2">
+      @if (registerAdminForm.get('username')?.getError('required')) {
+      <p class="m-0">name is required</p>
+      } @else if (registerAdminForm.get('username')?.getError('minlength')) {
+      <p class="m-0">Name must be at least 3 characters long.</p>
+      } @else if (registerAdminForm.get('username')?.getError('maxlength')) {
+      <p class="m-0">Name cannot be more than 20 characters long.</p>
+      }
+    </div>
+    }
+  </div>
+
+
+
+    <div class="mt-2">
+      <label for="password">password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+          'is-valid':!(registerAdminForm.get('password')?.errors &&!registerAdminForm.get('password')?.touched),
+          'is-invalid':(registerAdminForm.get('password')?.errors &&registerAdminForm.get('password')?.touched)
+        }"
+      />
+      @if (registerAdminForm.get('password')?.errors &&
+      registerAdminForm.get('password')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerAdminForm.get('password')?.getError('required')){
+        <p class="m-0">password is required</p>
+        } @else if(registerAdminForm.get('password')?.getError('pattern')) {
+        <p class="m-0">password much be more than 6 characters and have one capital charactere and one special char</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="confirmPassword">confirmPassword</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        class="form-control"
+        formControlName="confirmPassword"
+
+        [ngClass]="{
+          'is-valid': !registerAdminForm.getError('missmatch') && registerAdminForm.get('confirmPassword')?.valid && registerAdminForm.get('confirmPassword')?.touched,
+          'is-invalid': registerAdminForm.getError('missmatch') || (registerAdminForm.get('confirmPassword')?.invalid && registerAdminForm.get('confirmPassword')?.touched)
+        }"
+      />
+      @if (registerAdminForm.getError('missmatch') &&
+      registerAdminForm.get('confirmPassword')?.touched) {
+      <div class="alert alert-danger mt-2">
+        <p class="m-0">password is not matched</p>
+      </div>
+      }
+    </div>
+
+
+
+    <div class="mt-2">
+      <label for="confirmAdmin">confirmAdmin</label>
+      <input
+        type="text"
+        id="confirmAdmin"
+        name="confirmAdmin"
+        class="form-control"
+        formControlName="confirmAdmin"
+        [ngClass]="{
+          'is-valid':!(registerAdminForm.get('confirmAdmin')?.errors &&!registerAdminForm.get('confirmAdmin')?.touched),
+          'is-invalid':(registerAdminForm.get('confirmAdmin')?.errors &&registerAdminForm.get('confirmAdmin')?.touched)
+        }"
+      />
+      @if (registerAdminForm.get('confirmAdmin')?.errors &&
+      registerAdminForm.get('confirmAdmin')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerAdminForm.get('confirmAdmin')?.getError('required')){
+        <p class="m-0">confirmAdmin is required</p>
+        } @else if(registerAdminForm.get('confirmAdmin')?.getError('pattern')) {
+        <p class="m-0">confirmAdmin much be more than 6 characters and have one capital charactere and one special char</p>
+        }
+      </div>
+      }
+    </div>
+
+
+
+
+    <button [disabled]="registerAdminForm.invalid" type="submit" class="mt-5 container">sign up</button>
+@if (msgerror) {
+  <p class="alert alert-danger">account already exist</p>
+}
+  </form>
+  <div>
+    have an account :
+    <li class="nav-item">
+      <a class="nav-link " (click)="navigatenow()">login</a>
+    </li>
+  </div>
+</section>

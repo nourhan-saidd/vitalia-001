@@ -1,0 +1,26 @@
+<div class="menu-container">
+  <header class="menu-header">
+  </header>
+  <div class="menu-grid">
+    @for (product of productlist; track product.id) {
+      <div class="menu-card" [routerLink]="['/productdetails', product.id]">
+        <div class="image-container">
+          <img [src]="'https://vitalia.runasp.net' + product.imagePath" alt="product photo" />
+        </div>
+        <div class="card-content">
+          <h3>{{ product.name }}</h3>
+          <div class="price">{{ product.price + '$'}}</div>
+          <span>{{product.stock + ":" +'instock'}}</span>
+          <button class="add-to-cart" (click)="$event.stopPropagation(); addToCart(product.id)">
+
+            Add to cart
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14m-7-7l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    }
+  </div>
+</div>

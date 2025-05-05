@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.cr{
+  cursor: pointer;
+  color: #294634;
+}
+.size{
+  font-size: 25px;
+}
+.btn-1{
+  background-color: #DC3545;
+  padding: 10PX 30PX;
+  border-radius: 20PX;
+  font-size: 20PX;
+  font-weight: 500;
+  color: white;
+  text-transform: capitalize;
+text-align: center;
+}
+.btn-1:hover{
+  background-color: red;
+}
+.btn-2{
+  background-color: #294634;
+  padding: 10PX 30PX;
+  border-radius: 20PX;
+  font-size: 20PX;
+  font-weight: 500;
+  color: white;
+  text-transform: capitalize;
+text-align: center;
+}
+.btn-2:hover{
+  background-color: #294634c2;
+}

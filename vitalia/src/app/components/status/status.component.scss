@@ -1,0 +1,200 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Container layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  margin-left: 20px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2d4f3f;
+  margin-bottom: 8px;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.breadcrumb-item {
+  font-size: 16px;
+  color: #666;
+}
+
+.breadcrumb-item.active {
+  color: #e78c31;
+  font-weight: 500;
+}
+
+/* Table styles */
+.table-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table th {
+  font-weight: 600;
+  color: #2d4f3f;
+  background-color: #f5f5f5;
+}
+
+.orders-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Client cell styles */
+.client-cell {
+  min-width: 180px;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.client-name {
+  font-weight: 500;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 12px 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .orders-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  .client-cell {
+    min-width: 160px;
+  }
+}
+
+/* Animation for status indicators */
+@keyframes statusFade {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.status.complete, .status.canceled {
+  animation: statusFade 2s infinite;
+}
+
+/* Elegant transitions */
+.orders-table tbody tr {
+  transition: transform 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  transform: translateX(4px);
+}

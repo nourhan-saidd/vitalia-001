@@ -1,0 +1,75 @@
+<section class="container text-center mt-5 rounded-5 mb-5 p-5">
+  <h1 class="h2">admin..Login Now:</h1>
+  <form [formGroup]="loginadminForm" (ngSubmit)="loginadminSubmit()">
+
+    <div class="mt-2">
+      <label for="username">username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        class="form-control"
+        formControlName="username"
+  [ngClass]="{
+  'is-valid':!(loginadminForm.get('username')?.errors && !loginadminForm.get('username')?.touched ),
+  'is-invalid':(loginadminForm.get('username')?.errors &&loginadminForm.get('username')?.touched )
+  }"
+      />
+      @if (loginadminForm.get('username')?.errors &&loginadminForm.get('FName')?.touched ) {
+      <div class="alert alert-danger mt-2">
+        @if (loginadminForm.get('username')?.getError('required')) {
+        <p class="m-0">name is required</p>
+        } @else if (loginadminForm.get('username')?.getError('minlength')) {
+        <p class="m-0">Name must be at least 3 characters long.</p>
+        } @else if (loginadminForm.get('username')?.getError('maxlength')) {
+        <p class="m-0">Name cannot be more than 20 characters long.</p>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="mt-2">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+          'is-valid': !(
+            loginadminForm.get('password')?.errors &&
+            !loginadminForm.get('password')?.touched
+          ),
+          'is-invalid':
+          loginadminForm.get('password')?.errors &&
+          loginadminForm.get('password')?.touched
+        }"
+      />
+      @if (loginadminForm.get('password')?.errors &&
+      loginadminForm.get('password')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (loginadminForm.get('password')?.getError('required')){
+        <p class="m-0">Password is required</p>
+        } @else if (loginadminForm.get('password')?.getError('pattern')) {
+        <p class="m-0">Password must be at least 6 characters</p>
+        }
+      </div>
+      }
+    </div>
+
+    <button
+      [disabled]="loginadminForm.invalid"
+      type="submit"
+      class="mt-5 container "
+    >
+      Login
+    </button>
+
+    @if (msgerror) {
+    <p class="alert alert-danger">Invalid email or password</p>
+    }
+  </form>
+
+
+</section>

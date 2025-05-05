@@ -1,0 +1,267 @@
+<section class="container text-center mt-5 rounded-5 mb-5 p-5">
+  <h1 class="h2">register now:</h1>
+  <form [formGroup]="registerClientForm" (ngSubmit)="registerClientSubmit()">
+
+
+ <div class=" container spaces d-flex gx-3">
+  <div class="mt-2 w-50 ">
+    <label for="name">first name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      formControlName="FName"
+[ngClass]="{
+'is-valid':!(registerClientForm.get('FName')?.errors && !registerClientForm.get('FName')?.touched ),
+'is-invalid':(registerClientForm.get('FName')?.errors &&registerClientForm.get('FName')?.touched )
+}"
+    />
+    @if (registerClientForm.get('FName')?.errors &&registerClientForm.get('FName')?.touched ) {
+    <div class="alert alert-danger mt-2">
+      @if (registerClientForm.get('FName')?.getError('required')) {
+      <p class="m-0">name is required</p>
+      } @else if (registerClientForm.get('FName')?.getError('minlength')) {
+      <p class="m-0">Name must be at least 3 characters long.</p>
+      } @else if (registerClientForm.get('FName')?.getError('maxlength')) {
+      <p class="m-0">Name cannot be more than 20 characters long.</p>
+      }
+    </div>
+    }
+  </div>
+
+
+
+  <div class="mt-2 ms-4 w-50">
+    <label for="name"> last name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      formControlName="LName"
+[ngClass]="{
+'is-valid':!(registerClientForm.get('LName')?.errors && !registerClientForm.get('LName')?.touched ),
+'is-invalid':(registerClientForm.get('LName')?.errors &&registerClientForm.get('LName')?.touched )
+}"
+    />
+    @if (registerClientForm.get('LName')?.errors &&registerClientForm.get('LName')?.touched ) {
+    <div class="alert alert-danger mt-2">
+      @if (registerClientForm.get('LName')?.getError('required')) {
+      <p class="m-0">name is required</p>
+      } @else if (registerClientForm.get('LName')?.getError('minlength')) {
+      <p class="m-0">Name must be at least 3 characters long.</p>
+      } @else if (registerClientForm.get('LName')?.getError('maxlength')) {
+      <p class="m-0">Name cannot be more than 20 characters long.</p>
+      }
+    </div>
+    }
+  </div>
+ </div>
+
+
+    <div class="mt-2">
+      <label for="email">email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{
+          'is-valid': !registerClientForm.get('email')?.errors && registerClientForm.get('email')?.touched,
+          'is-invalid': registerClientForm.get('email')?.errors && registerClientForm.get('email')?.touched
+        }"
+      />
+      @if (registerClientForm.get('email')?.errors
+      &&registerClientForm.get('email')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerClientForm.get('email')?.getError('required')) {
+        <p class="m-0">email must exist</p>
+        } @else if (registerClientForm.get('email')?.getError('email')) {
+        <p class="m-0">email must be valid</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="phone">phone</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="form-control"
+        formControlName="phone"
+[ngClass]="{
+  'is-valid':!(registerClientForm.get('phone')?.errors &&!registerClientForm.get('phone')?.touched),
+  'is-invalid':(registerClientForm.get('phone')?.errors &&registerClientForm.get('phone')?.touched)
+}"
+      />
+      @if (registerClientForm.get('phone')?.errors &&
+      registerClientForm.get('phone')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerClientForm.get('phone')?.getError('required')) {
+        <p class="m-0">phone is required</p>
+        } @else if (registerClientForm.get('phone')?.getError('pattern')) {
+        <p class="m-0">phone must be valid</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="password">password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{
+          'is-valid':!(registerClientForm.get('password')?.errors &&!registerClientForm.get('password')?.touched),
+          'is-invalid':(registerClientForm.get('password')?.errors &&registerClientForm.get('password')?.touched)
+        }"
+      />
+      @if (registerClientForm.get('password')?.errors &&
+      registerClientForm.get('password')?.touched) {
+      <div class="alert alert-danger mt-2">
+        @if (registerClientForm.get('password')?.getError('required')){
+        <p class="m-0">password is required</p>
+        } @else if(registerClientForm.get('password')?.getError('pattern')) {
+        <p class="m-0">password much be more than 6 characters and have one capital charactere and one special char</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mt-2">
+      <label for="rePassword">rePassword</label>
+      <input
+        type="password"
+        id="rePassword"
+        name="rePassword"
+        class="form-control"
+        formControlName="rePassword"
+
+        [ngClass]="{
+          'is-valid': !registerClientForm.getError('missmatch') && registerClientForm.get('rePassword')?.valid && registerClientForm.get('rePassword')?.touched,
+          'is-invalid': registerClientForm.getError('missmatch') || (registerClientForm.get('rePassword')?.invalid && registerClientForm.get('rePassword')?.touched)
+        }"
+      />
+      @if (registerClientForm.getError('missmatch') &&
+      registerClientForm.get('rePassword')?.touched) {
+      <div class="alert alert-danger mt-2">
+        <p class="m-0">password is not matched</p>
+      </div>
+      }
+    </div>
+    <h2 class="mt-3">health information</h2>
+    <div class="d-flex m-auto w-75">
+      <div class="mt-2 ms-4">
+        <label for="age">age</label>
+        <input
+          type="date"
+          id="age"
+          name="age"
+          class="form-control"
+          formControlName="age"
+          [ngClass]="{
+            'is-valid':!(registerClientForm.get('age')?.errors &&!registerClientForm.get('age')?.touched),
+            'is-invalid':(registerClientForm.get('age')?.errors &&registerClientForm.get('age')?.touched)
+          }"
+        />
+        @if (registerClientForm.get('age')?.errors &&
+        registerClientForm.get('age')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerClientForm.get('age')?.getError('required')){
+          <p class="m-0">age is required</p>
+          } @else if (registerClientForm.get('age')?.getError('min')) {
+          <p class="m-0">age much be more than 15 years old</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="mt-2 ms-4">
+        <label for="gender">gender</label>
+        <input
+          type="text"
+          id="gender"
+          name="gender"
+          class="form-control"
+          formControlName="gender"
+          [ngClass]="{
+            'is-valid':!(registerClientForm.get('gender')?.errors &&!registerClientForm.get('gender')?.touched),
+            'is-invalid':(registerClientForm.get('gender')?.errors &&registerClientForm.get('gender')?.touched)
+          }"
+        />
+        @if (registerClientForm.get('gender')?.errors &&
+        registerClientForm.get('gender')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerClientForm.get('gender')?.getError('required')){
+          <p class="m-0">gender is required</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="mt-2 ms-4">
+        <label for="height">height</label>
+        <input
+          type="number"
+          id="height"
+          name="height"
+          class="form-control"
+          formControlName="Hight"
+
+          [ngClass]="{
+            'is-valid':!(registerClientForm.get('Hight')?.errors &&!registerClientForm.get('Hight')?.touched),
+            'is-invalid':(registerClientForm.get('Hight')?.errors &&registerClientForm.get('Hight')?.touched)
+          }"
+        />
+        @if (registerClientForm.get('Hight')?.errors &&
+        registerClientForm.get('Hight')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerClientForm.get('Hight')?.getError('required')){
+          <p class="m-0">height is required</p>
+          }
+        </div>
+        }
+      </div>
+      <div class="mt-2 ms-4">
+        <label for="weight">weight</label>
+        <input
+          type="number"
+          id="weight"
+          name="weight"
+          class="form-control"
+          formControlName="Wight"
+          [ngClass]="{
+            'is-valid':!(registerClientForm.get('Wight')?.errors &&!registerClientForm.get('Wight')?.touched),
+            'is-invalid':(registerClientForm.get('Wight')?.errors &&registerClientForm.get('Wight')?.touched)
+          }"
+        />
+        @if (registerClientForm.get('Wight')?.errors &&
+        registerClientForm.get('Wight')?.touched) {
+        <div class="alert alert-danger mt-2">
+          @if (registerClientForm.get('Wight')?.getError('required')){
+          <p class="m-0">weight is required</p>
+          }
+        </div>
+        }
+      </div>
+    </div>
+    <button [disabled]="registerClientForm.invalid" type="submit" class="mt-5 container">sign up</button>
+    <div class="mt-5">
+      <input id="terms" type="checkbox" />
+      <label for="terms"
+        >I have read and agree to the Privacy Policy and Terms of Service</label
+      >
+    </div>
+@if (msgerror) {
+  <p class="alert alert-danger">account already exist</p>
+}
+  </form>
+  <div>
+    have an account :
+    <li class="nav-item">
+      <a class="nav-link " (click)="navigatenow()">login</a>
+    </li>
+  </div>
+</section>

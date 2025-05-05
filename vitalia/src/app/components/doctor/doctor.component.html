@@ -1,0 +1,20 @@
+<div class="container">
+  <header>
+    <h1 class="main-title">"Find Your <span>Perfect Nutrition Expert</span> & Start Your Health Journey Today!"</h1>
+  </header>
+  <main class="experts-grid">
+    @for (info of listappointment; track info.id) {
+      <div class="expert-card" [routerLink]="['/doctorinfo',info.id]">
+        <div class="expert-image">
+          <img [src]="'https://vitalia.runasp.net' + info.image" alt="Dr. name">
+        </div>
+        <div class="expert-info">
+          <h2 class="expert-name">{{info.name}}</h2>
+          <h3 class="expert-title">Certified Nutritionist | Weight Management</h3>
+          <p class="expert-description">{{info.shortDescription}}</p>
+          <a href="#" class="appointment-button">Make An Appointment →</a>
+        </div>
+      </div>
+    }
+  </main>
+</div>

@@ -1,0 +1,63 @@
+<div class="bg-footer">
+  <div class="footer">
+    <div class="logo">
+      <img src="../../../assets/imgs/logo (1).svg" alt="logo" />
+      <p>
+        Vitalia Health Nutrition is your go-to platform for personalized
+        nutrition guidance, AI-powered food tracking, expert consultations, and
+        a trusted marketplace for health products.
+      </p>
+    </div>
+    <div class="quick-links">
+      <h6>quick links</h6>
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="home" routerLinkActive="router-link-active"  >home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blog" routerLinkActive="router-link-active"  >blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="doctor" routerLinkActive="router-link-active"  >doctor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="shop" routerLinkActive="router-link-active"  >shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="community" routerLinkActive="router-link-active"  >community</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="information">
+      <h6 class="moha">informations</h6>
+      <div>
+        <li>email:</li>
+        <li>support<i class="fa-solid fa-at" style="display: inline;"></i>vitaliahealth.com</li>
+      </div>
+      <div>
+        <li>facebook:</li>
+        <li>facebook.com/vitaliahealth</li>
+      </div>
+      <div>
+        <li>instagram:</li>
+        <li>instagram.com/vitaliahealth</li>
+      </div>
+      <div>
+        <li>phone:</li>
+        <li>+2598423584</li>
+      </div>
+    </div>
+    <div class="admin-support">
+      <h6>Admin Support</h6>
+      <form (ngSubmit)="sendmessages()">
+        <input type="email" placeholder="Email" [(ngModel)]="email" name="email"/>
+        <input type="tel" placeholder="Phone" [(ngModel)]="phone" name="phone"/>
+        <textarea placeholder="message" class="mt-3" [(ngModel)]="text" name="message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+
+    </div>
+  </div>
+</div>
