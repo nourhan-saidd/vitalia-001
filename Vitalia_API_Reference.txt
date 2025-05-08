@@ -1,0 +1,5 @@
+للدخول إلى واجهة Swagger الخاصة بـ API، يمكنك زيارة الرابط التالي:
+
+[https://vitalia.runasp.net/swagger/index.html]
+
+---> +201025832248
